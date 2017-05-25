@@ -2,7 +2,7 @@
 # @Author: Charles Starr
 # @Date:   2017-05-23 14:22:52
 # @Last Modified by:   Charles Starr
-# @Last Modified time: 2017-05-23 14:28:51
+# @Last Modified time: 2017-05-24 15:13:19
 
 from spectrum_handler import *
 from peptide_fragmenter import *
@@ -16,4 +16,4 @@ def main(mass_data_file, peptide_sequence, accuracy, intensity):
 	matcher = FragmentMatcher(mass_data_file, spectrum, fragments, accuracy, intensity)
 	matcher.export_results()
 
-main('ARVA_7_CYTOSOL%2033%25.mzML', 'RRGWALRLVLAY', 0.5, 100.0)
+main('indol_8.mzML', 'ILPWKWPWWPWRR', 0.5, 100.0)

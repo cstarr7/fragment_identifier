@@ -2,7 +2,7 @@
 # @Author: Charles Starr
 # @Date:   2017-05-23 11:47:10
 # @Last Modified by:   Charles Starr
-# @Last Modified time: 2017-05-23 12:50:28
+# @Last Modified time: 2017-05-23 14:58:38
 import pymzml
 
 class MassSpectrum(object):
@@ -12,7 +12,7 @@ class MassSpectrum(object):
 
 		self.ms_datafile = ms_datafile
 		self.ms_spectrum = self.parse_mzml()
-		self.centroidedPeaks = self.ms_spectrum.centroidedPeaks
+		self.centroided_peaks = self.ms_spectrum.next().centroidedPeaks
 
 	def parse_mzml(self):
 		# Instructions for parsing an mzml file.
@@ -22,5 +22,4 @@ class MassSpectrum(object):
 		return msrun
 
 
-spectra = MassSpectrum('ARVA_7_CYTOSOL%2033%25.mzML')
 

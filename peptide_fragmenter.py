@@ -2,9 +2,10 @@
 # @Author: Charles Starr
 # @Date:   2017-05-23 12:52:51
 # @Last Modified by:   Charles Starr
-# @Last Modified time: 2017-05-23 13:30:01
+# @Last Modified time: 2017-05-23 23:10:18
 
 from atomic_mass_data import *
+import pandas as pd
 
 
 class PeptideFragmenter(object):
@@ -13,7 +14,13 @@ class PeptideFragmenter(object):
 
 		self.peptide_sequence = sequence
 		self.fragment_list = self.create_fragments()
-		print self.fragment_list
+		
+		
+		writer = pd.ExcelWriter('testthree.xlsx')
+		frame = pd.DataFrame(self.fragment_list)
+		frame.to_excel(writer)
+		writer.save()
+		
 
 	def create_fragments(self):
 	#do the peptide fragmenting sequentially
